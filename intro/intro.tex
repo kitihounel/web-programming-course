@@ -7,6 +7,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+\setcounter{tocdepth}{1}
 \apptocmd{\frame}{}{\justifying}{} % Allow optional arguments after frame.
 
 \colorlet{punct}{red!60!black}
@@ -155,7 +156,9 @@ Cette méthode permet d'obtenir les options de communication d'une ressource ou 
 
 \subsection{Codes de réponse HTTP}
 \begin{frame}{Codes de réponse HTTP}
-  Les codes de statut de réponse HTTP indiquent si une requête HTTP a été exécutée avec succès ou non. Les réponses sont regroupées en cinq classes.
+  Les codes de statut de réponse HTTP sont utilisés par le serveur pour indiquer si une requête HTTP a été exécutée avec succès ou non.
+
+  Les codes de réponse sont regroupées en cinq classes. Elles apparaissent dans l'entête de la réponse.
 \end{frame}
 
 \begin{frame}{Classes de réponse HTTP}
@@ -418,20 +421,39 @@ paths:
   \item \textbf{git pull} \\
   Pour se synchroniser avec le dépôt central.
 }
+\only<6>{
+  \item \textbf{git clone} \\
+  Pour faire une copie d'un dépôt.
+}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Plateformes}
 \begin{itemize}
 \only<1>{
-  \item GitHub \\
+  \item \textbf{GitHub} \\
     Propriétaire, mais accessible
+    \vspace{15pt}
+    \begin{center}
+      \includegraphics[scale=0.2]{images/github.png}
+    \end{center}
 }
 \only<2>{
-  \item GitLab \\
+  \item \textbf{GitLab} \\
     Opensource
+    \begin{center}
+      \includegraphics[scale=0.3]{images/gitlab.png}
+    \end{center}
 }
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Pull request}
+  On parle de \textbf{pull request} lorsqu'un développeur demande que les changements ou ajouts qu'il a effectués sur sa copie soient intégrés dans le dépôt principal.
+
+  Le propriétaire du dépôt peut accepter (après validation des modifications) ou non la requête.
+
+  Le rejet d'un \textbf{pull request} donne parfois naissance à un \textbf{fork}.
 \end{frame}
 
 \section{Composer}
@@ -464,7 +486,7 @@ paths:
 \end{frame}
 
 \begin{frame}{Utilisation II}
-  2. Installer Composer (globalement ou spécifiquement pour le projet).
+  2. Installer Composer (globalement ou en local).
 \end{frame}
 
 \begin{frame}[fragile]{Utilisation III}
@@ -494,7 +516,7 @@ Patron de conception qui promeut la séparation du code des applications en troi
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Origines et utilisation actuelle du MVC I}
+\begin{frame}{Origines et utilisation actuelle du MVC}
 Le MVC a été créé pour faciliter le développement des applications graphiques. Il est par exemple utilisé par Swing et Qt.
 
 Mais il a été appliqué avec succès dans le domaines des applications web car il facilite grandemant le processus de développement et permet le partge des tâches entre les devs.
@@ -514,6 +536,10 @@ Mais il a été appliqué avec succès dans le domaines des applications web car
 \begin{itemize}
   \item Framework MVC écrit en PHP très populaire.
   \item \url{https://laravel.com}
+    \vspace{10pt}
+    \begin{center}
+      \includegraphics[scale=0.3]{images/laravel.png}
+    \end{center}
 \end{itemize}
 \end{frame}
 
@@ -549,5 +575,11 @@ Mais il a été appliqué avec succès dans le domaines des applications web car
       php artisan serve
     \end{Verbatim}
   \end{footnotesize}
+\end{frame}
+
+\begin{frame}{Page d'accueil par défaut}
+\begin{center}
+  \includegraphics[scale=0.4]{images/laravel-welcome-page.png}
+\end{center}
 \end{frame}
 \end{document}

@@ -1,11 +1,13 @@
 \documentclass{beamer}
+\usetheme[subsectionpage=progressbar]{metropolis}
 \usepackage{ragged2e}
 \usepackage[frenchb]{babel}
-\usetheme[subsectionpage=progressbar]{metropolis}
 \usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
+
+\metroset{block=fill}
 
 \setcounter{tocdepth}{1}
 \apptocmd{\frame}{}{\justifying}{} % Allow optional arguments after frame.
@@ -242,7 +244,7 @@ Certaines entêtes sont propres aux requêtes, d'autres aux réponses. D'autres 
 \begin{frame}{Cookies III}
 Malheureusement, l'utilisation des cookies a été pervertie.
 
-Jetez un\oe{}il aux cookies stockés dans votre navigateur. ;)
+Jetez un \oe{}il aux cookies stockés dans votre navigateur. ;)
 \end{frame}
 
 \subsection{Faire des requêtes HTTP}
@@ -266,11 +268,22 @@ Il existe de nombreux outils pouvant aider à lancer des requêtes HTTP vers un 
   \begin{itemize}
     \item telnet
     \item curl (la référence)
-    \item netcat (ncat)
+    \item netcat (nc)
     \item httpie
   \end{itemize}
 }
 \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{netcat}
+  Outil en ligne de commande permettant (entre autres) d'exécuter des requêtes HTTP.
+
+  \begin{alertblock}{Syntaxe}
+    \verb+nc <host> <port> < /path/to/file/containing/request+
+  \end{alertblock}
+
+  Le fichier doit utiliser la séquence \verb+\r\n+ pour indiquer les fins de ligne. Vous pouvez utiliser l'utilitaire \verb+dos2unix+ pour effectuer la conversion.
 \end{frame}
 
 \begin{frame}{Quelques requêtes HTTP}
@@ -454,5 +467,27 @@ paths:
   Le propriétaire du dépôt peut accepter (après validation des modifications) ou non la requête.
 
   Le rejet d'un \textbf{pull request} donne parfois naissance à un \textbf{fork}.
+\end{frame}
+
+\section{Docker}
+
+\begin{frame}{Docker}
+  Docker est un logiciel opensource qui permet d'exécuter des applications dans des environnements sécurisés appelés conteneurs.
+
+  Un conteneur est semblable à une machine virtuelle, mais en plus léger.
+\end{frame}
+
+\begin{frame}{Logo}
+  \begin{center}
+    \includegraphics[scale=0.5]{images/docker-logo.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Utilisation de Docker et des conteneurs}
+Les conteneurs permettent de regrouper et d'exécuter dans un environnement isolé une application avec toutes ses dépendances.
+
+Ils sont très utilisés par les programmeurs lors des phases de développement et également en production car ils facilitent le déploiement et la maintenance des applications.
+
+Ils permettent d'avoir plusieurs versions d'une application sur une machine sans les conflits et autres soucis de configuration.
 \end{frame}
 \end{document}
